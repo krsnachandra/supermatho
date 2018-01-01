@@ -1,4 +1,6 @@
-require './question'
+require './addquestion'
+require './subquestion'
+require './multquestion'
 
 class MathGame
 
