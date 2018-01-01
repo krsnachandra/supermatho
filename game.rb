@@ -29,7 +29,7 @@ class MathGame
   end
 
   def add_one_to_score
-    @score + 1
+    @score += 1
   end
 
   def print_score
