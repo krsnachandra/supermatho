@@ -14,7 +14,10 @@ class MathGame
   end
 
   def start
-    question(AddQuestion)
+    until level_complete? do
+      question(AddQuestion)
+    end
+    puts "Level Complete!"
   end
 
   def question(quest)
@@ -34,6 +37,10 @@ class MathGame
 
   def print_score
     puts "Your score is #{@score}!"
+  end
+
+  def level_complete?
+    @score >= 5
   end
 
 end
