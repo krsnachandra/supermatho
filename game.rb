@@ -14,8 +14,10 @@ class MathGame
   end
 
   def start
+    puts "💎"
     puts "Welcome to Supermatho!"
     loop do
+      puts "💎"
       puts "Would you like to practice addition, subtraction, or multiplication? (+ / - / x)"
       entry = gets.chomp
       case entry
@@ -35,6 +37,10 @@ class MathGame
         @score = 0
       else
         puts "Hope you're ready to multiply!"
+        puts "If you need a reminder of how multiplication works, type '?'."
+        if gets.chomp == '?'
+          puts "If you have the equation 3x4 it's like you have 3 empty apple trees and you put 4 apples in each apple tree. How many apples are there in total?"
+        end
         until level_complete? do
           question(MultQuestion)
         end
