@@ -14,10 +14,34 @@ class MathGame
   end
 
   def start
-    until level_complete? do
-      question(AddQuestion)
+    puts "Welcome to Supermatho!"
+    loop do
+      puts "Would you like to practice addition, subtraction, or multiplication? (+ / - / x)"
+      entry = gets.chomp
+      case entry
+      when "+"
+        puts "Get ready to add some numbers!"
+        until level_complete? do
+          question(AddQuestion)
+        end
+        puts "Level Complete!"
+        @score = 0
+      when "-"
+        puts "Get ready for some subtraction!"
+        until level_complete? do
+          question(SubQuestion)
+        end
+        puts "Level Complete!"
+        @score = 0
+      else
+        puts "Hope you're ready to multiply!"
+        until level_complete? do
+          question(MultQuestion)
+        end
+        puts "Level Complete!"
+        @score = 0
+      end
     end
-    puts "Level Complete!"
   end
 
   def question(quest)
